@@ -14,7 +14,8 @@ MEMORY
    declarations below and their references further down to get rid of the gaps.                  */
 
 /* Adjusted to avoid ROM overlap with song_data */
-__anim_mon_load_address = 0x8b70000;
+/* Move start of animated front pics to avoid overlap with multiboot_data */
+__anim_mon_load_address = 0x8ba0000;
 __gfx_load_address = 0x8d00000;
 
 SECTIONS {
