@@ -879,6 +879,12 @@
 #define METATILE_Sootopolis_GymDoor_Closed   0x250
 #define METATILE_Sootopolis_RoughWater       0x290
 
+// gTileset_SootopolisGym
+#define METATILE_SootopolisGym_Ice          0x20D
+#define METATILE_SootopolisGym_Ice_Cracked  0x20E
+#define METATILE_SootopolisGym_Ice_Broken   0x206
+#define METATILE_SootopolisGym_Stairs       0x20F
+
 // gTileset_Sprout
 #define METATILE_Sprout_Tower_Door  0x294
 

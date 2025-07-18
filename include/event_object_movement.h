@@ -130,6 +130,8 @@ u8 SpawnSpecialObjectEventParameterized(u8 graphicsId, u8 movementBehavior, u8 l
 u8 SpawnSpecialObjectEvent(struct ObjectEventTemplate *objectEventTemplate);
 void SetSpritePosToMapCoords(s16 mapX, s16 mapY, s16 *destX, s16 *destY);
 void CameraObjectReset(void);
+#define CameraObjectReset1 CameraObjectReset
+#define CameraObjectReset2 CameraObjectReset
 void ObjectEventSetGraphicsId(struct ObjectEvent *objectEvent, u8 graphicsId);
 void ObjectEventTurn(struct ObjectEvent *objectEvent, u8 direction);
 void ObjectEventTurnByLocalIdAndMap(u8 localId, u8 mapNum, u8 mapGroup, u8 direction);
