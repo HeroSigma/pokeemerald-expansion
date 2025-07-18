@@ -44,6 +44,13 @@
 #define CHAR_DEC_SEPARATOR CHAR_COMMA
 #endif
 
+// Feature toggles for memory reduction
+#define ENABLE_TRAINER_HILL 0
+#define ENABLE_MYSTERY_GIFT 0
+#define ENABLE_BERRY_BLENDER 0
+#define ENABLE_CONTEST_HALL 0
+#define ENABLE_BATTLE_FRONTIER 0
+
 // Uncomment to fix some identified minor bugs
 #define BUGFIX
 

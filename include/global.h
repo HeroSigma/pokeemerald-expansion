@@ -528,13 +528,21 @@ struct SaveBlock2
     /*0xAC*/ u32 encryptionKey;
     /*0xB0*/ struct PlayersApprentice playerApprentice;
     /*0xDC*/ struct Apprentice apprentices[APPRENTICE_COUNT];
+    #if ENABLE_BERRY_BLENDER
     /*0x1EC*/ struct BerryCrush berryCrush;
+    #endif
     /*0x1FC*/ struct PokemonJumpRecords pokeJump;
+    #if ENABLE_BERRY_BLENDER
     /*0x20C*/ struct BerryPickingResults berryPick;
+    #endif
+    #if ENABLE_CONTEST_HALL
     /*0x21C*/ struct RankingHall1P hallRecords1P[HALL_FACILITIES_COUNT][FRONTIER_LVL_MODE_COUNT][HALL_RECORDS_COUNT]; // From record mixing.
     /*0x57C*/ struct RankingHall2P hallRecords2P[FRONTIER_LVL_MODE_COUNT][HALL_RECORDS_COUNT]; // From record mixing.
     /*0x624*/ u16 contestLinkResults[CONTEST_CATEGORIES_COUNT][CONTESTANT_COUNT];
+    #endif
+    #if ENABLE_BATTLE_FRONTIER
     /*0x64C*/ struct BattleFrontier frontier;
+    #endif
 }; // sizeof=0xF2C
 
 extern struct SaveBlock2 *gSaveBlock2Ptr;
@@ -1059,9 +1067,13 @@ struct SaveBlock1
     /*0x31C7*/ struct ExternalEventFlags externalEventFlags;
     /*0x31DC*/ struct Roamer roamer;
     /*0x31F8*/ struct EnigmaBerry enigmaBerry;
+    #if ENABLE_MYSTERY_GIFT
     /*0x322C*/ struct MysteryGiftSave mysteryGift;
+    #endif
     /*0x3598*/ u8 unused_3598[0x180];
+    #if ENABLE_TRAINER_HILL
     /*0x3718*/ u32 trainerHillTimes[NUM_TRAINER_HILL_MODES];
+    #endif
     /*0x3728*/ struct RamScript ramScript;
     /*0x3B14*/ struct RecordMixingGift recordMixingGift;
     /*0x3B24*/ u8 seen2[NUM_DEX_FLAG_BYTES];
@@ -1069,7 +1081,9 @@ struct SaveBlock1
     /*0x3B98*/ struct TrainerNameRecord trainerNameRecords[20];
     /*0x3C88*/ u8 registeredTexts[UNION_ROOM_KB_ROW_COUNT][21];
     /*0x3D5A*/ u8 unused_3D5A[10];
+    #if ENABLE_TRAINER_HILL
     /*0x3D64*/ struct TrainerHillSave trainerHill;
+    #endif
     /*0x3D70*/ struct WaldaPhrase waldaPhrase;
     // sizeof: 0x3D88
 };
