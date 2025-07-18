@@ -842,6 +842,14 @@
       "height": 1
     },
     {
+      "id": "MAPSEC_DIGLETTS_CAVE",
+      "name": "DIGLETT'S CAVE",
+      "x": 0,
+      "y": 0,
+      "width": 1,
+      "height": 1
+    },
+    {
       "id": "MAPSEC_KANTO_VICTORY_ROAD",
       "name": "VICTORY ROAD",
       "x": 0,
@@ -1044,6 +1052,22 @@
     {
       "id": "MAPSEC_PATTERN_BUSH",
       "name": "PATTERN BUSH"
+    },
+    {
+      "id": "MAPSEC_ALTERING_CAVE_FRLG",
+      "name": "ALTERING CAVE",
+      "x": 0,
+      "y": 0,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "id": "MAPSEC_TANOBY_CHAMBERS",
+      "name": "TANOBY CHAMBERS",
+      "x": 0,
+      "y": 0,
+      "width": 1,
+      "height": 1
     },
     {
       "id": "MAPSEC_MT_EMBER",
