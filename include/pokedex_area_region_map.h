@@ -9,7 +9,10 @@ struct PokedexAreaMapTemplate
     u32 unk:20; // never read
 };
 
-void LoadPokedexAreaMapGfx(const struct PokedexAreaMapTemplate *template);
+void LoadPokedexAreaMapGfx(const struct PokedexAreaMapTemplate *);
+void LoadPokedexAreaMapGfx_Johto(const struct PokedexAreaMapTemplate *);
+void LoadPokedexAreaMapGfx_Kanto(const struct PokedexAreaMapTemplate *);
+void LoadPokedexAreaMapGfx_Sevii(const struct PokedexAreaMapTemplate *);
 bool32 TryShowPokedexAreaMap(void);
 void PokedexAreaMapChangeBgY(u32 move);
 void FreePokedexAreaMapBgNum(void);

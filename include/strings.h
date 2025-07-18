@@ -747,10 +747,21 @@ extern const u8 gText_FirePunch48BP[];
 
 extern const u8 gText_SlateportCity[];
 extern const u8 gText_BattleFrontier[];
+extern const u8 gText_VermilionCity[];
+extern const u8 gText_OlivineCity[];
+extern const u8 gText_Sevii[];
 extern const u8 gText_SouthernIsland[];
 extern const u8 gText_NavelRock[];
 extern const u8 gText_BirthIsland[];
 extern const u8 gText_FarawayIsland[];
+
+extern const u8 gText_Sevii1[];
+extern const u8 gText_Sevii2[];
+extern const u8 gText_Sevii3[];
+extern const u8 gText_Sevii4[];
+extern const u8 gText_Sevii5[];
+extern const u8 gText_Sevii6[];
+extern const u8 gText_Sevii7[];
 
 extern const u8 gText_BattleTrainers[];
 extern const u8 gText_BattleBasics[];
@@ -2960,7 +2971,11 @@ extern const u8 gText_Check[];
 extern const u8 gText_Cancel6[];
 
 // PokéNav Menu Handler
+extern const u8 gText_CheckRegionMaps[];
+extern const u8 gText_CheckMapOfKanto[];
+extern const u8 gText_CheckMapOfJohto[];
 extern const u8 gText_CheckMapOfHoenn[];
+extern const u8 gText_CheckMapOfSevii[];
 extern const u8 gText_CheckPokemonInDetail[];
 extern const u8 gText_CallRegisteredTrainer[];
 extern const u8 gText_CheckObtainedRibbons[];
@@ -3025,5 +3040,10 @@ extern const u8 gText_YourName[];
 extern const u8 gText_BoxName[];
 extern const u8 gText_PkmnsNickname[];
 extern const u8 gText_TellHimTheWords[];
+
+//Custom
+extern const u8 gText_Kanto[];
+extern const u8 gText_Johto[];
+extern const u8 gText_Sevii_Menu[];
 
 #endif // GUARD_STRINGS_H

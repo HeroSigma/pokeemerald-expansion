@@ -296,6 +296,18 @@ Common_Text_LookCloserAtMap:
 	.string "{PLAYER} took a closer look at the\n"
 	.string "HOENN region map.$"
 
+Common_Text_LookCloserAtMapKanto:
+	.string "{PLAYER} took a closer look at the\n"
+	.string "KANTO region map.$"
+
+Common_Text_LookCloserAtMapJohto:
+	.string "{PLAYER} took a closer look at the\n"
+	.string "JOHTO region map.$"
+
+Common_Text_LookCloserAtMapSevii:
+	.string "{PLAYER} took a closer look at the\n"
+	.string "SEVII ISLES map.$"
+
 PlayersHouse_2F_Text_ItsAGameCube:
 	.string "It's a Nintendo GameCube.\p"
 	.string "A Game Boy Advance is connected to\n"

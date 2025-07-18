@@ -6,6 +6,7 @@
 #include "field_camera.h"
 #include "field_effect.h"
 #include "field_effect_helpers.h"
+#include "field_screen_effect.h"
 #include "field_player_avatar.h"
 #include "fieldmap.h"
 #include "menu.h"
@@ -29,6 +30,7 @@
 #include "constants/moves.h"
 #include "constants/songs.h"
 #include "constants/trainer_types.h"
+#include "constants/metatile_behaviors.h"
 
 #define NUM_FORCED_MOVEMENTS 18
 #define NUM_ACRO_BIKE_COLLISIONS 5
@@ -617,6 +619,10 @@ static void PlayerNotOnBikeMoving(u8 direction, u16 heldKeys)
             PlayerNotOnBikeCollideWithFarawayIslandMew(direction);
             return;
         }
+        else if (collision == COLLISION_STAIR_WARP)
+        {
+            PlayerFaceDirection(direction);
+        }
         else
         {
             // Player collided with something. Certain collisions have special handling that precludes the normal collision effect.
@@ -682,6 +688,8 @@ static u8 CheckForPlayerAvatarStaticCollision(u8 direction)
 
     x = playerObjEvent->currentCoords.x;
     y = playerObjEvent->currentCoords.y;
+    if (IsDirectionalStairWarpMetatileBehavior(MapGridGetMetatileBehaviorAt(x, y), direction))
+        return COLLISION_STAIR_WARP;
     MoveCoords(direction, &x, &y);
     return CheckForObjectEventStaticCollision(playerObjEvent, x, y, direction, MapGridGetMetatileBehaviorAt(x, y));
 }
@@ -745,26 +753,52 @@ static bool8 ShouldJumpLedge(s16 x, s16 y, u8 direction)
         return FALSE;
 }
 
+//Replacing this method with the FR/LG version to allow for falling boulders
 static bool8 TryPushBoulder(s16 x, s16 y, u8 direction)
 {
-    if (FlagGet(FLAG_SYS_USE_STRENGTH))
-    {
-        u8 objectEventId = GetObjectEventIdByXY(x, y);
+    u8 objectEventId;
+    u8 direction_ = direction;
+    if (!FlagGet(FLAG_SYS_USE_STRENGTH))
+        return FALSE;
 
-        if (objectEventId != OBJECT_EVENTS_COUNT && gObjectEvents[objectEventId].graphicsId == OBJ_EVENT_GFX_PUSHABLE_BOULDER)
-        {
-            x = gObjectEvents[objectEventId].currentCoords.x;
-            y = gObjectEvents[objectEventId].currentCoords.y;
-            MoveCoords(direction, &x, &y);
-            if (GetCollisionAtCoords(&gObjectEvents[objectEventId], x, y, direction) == COLLISION_NONE
-             && MetatileBehavior_IsNonAnimDoor(MapGridGetMetatileBehaviorAt(x, y)) == FALSE)
-            {
-                StartStrengthAnim(objectEventId, direction);
-                return TRUE;
-            }
-        }
+    objectEventId = GetObjectEventIdByXY(x, y);
+    if (objectEventId == OBJECT_EVENTS_COUNT)
+        return FALSE;
+
+    if (gObjectEvents[objectEventId].graphicsId != OBJ_EVENT_GFX_PUSHABLE_BOULDER)
+        return FALSE;
+
+    x = gObjectEvents[objectEventId].currentCoords.x;
+    y = gObjectEvents[objectEventId].currentCoords.y;
+    MoveCoords(direction_, &x, &y);
+    if (MapGridGetMetatileBehaviorAt(x, y) == MB_FALL_WARP || (GetCollisionAtCoords(&gObjectEvents[objectEventId], x, y, direction_) == COLLISION_NONE && !MetatileBehavior_IsNonAnimDoor(MapGridGetMetatileBehaviorAt(x, y))))
+    {
+        StartStrengthAnim(objectEventId, direction_);
+        return TRUE;
     }
-    return FALSE;
+    else
+    {
+        return FALSE;
+    }
+
+    // if (FlagGet(FLAG_SYS_USE_STRENGTH))
+    // {
+    //     u8 objectEventId = GetObjectEventIdByXY(x, y);
+
+    //     if (objectEventId != OBJECT_EVENTS_COUNT && gObjectEvents[objectEventId].graphicsId == OBJ_EVENT_GFX_PUSHABLE_BOULDER)
+    //     {
+    //         x = gObjectEvents[objectEventId].currentCoords.x;
+    //         y = gObjectEvents[objectEventId].currentCoords.y;
+    //         MoveCoords(direction, &x, &y);
+    //         if (GetCollisionAtCoords(&gObjectEvents[objectEventId], x, y, direction) == COLLISION_NONE
+    //          && MetatileBehavior_IsNonAnimDoor(MapGridGetMetatileBehaviorAt(x, y)) == FALSE)
+    //         {
+    //             StartStrengthAnim(objectEventId, direction);
+    //             return TRUE;
+    //         }
+    //     }
+    // }
+    // return FALSE;
 }
 
 static void CheckAcroBikeCollision(s16 x, s16 y, u8 metatileBehavior, u8 *collision)
@@ -1524,6 +1558,7 @@ static bool8 PushBoulder_End(struct Task *task, struct ObjectEvent *player, stru
     {
         ObjectEventClearHeldMovementIfFinished(player);
         ObjectEventClearHeldMovementIfFinished(boulder);
+        HandleBoulderFallThroughHole(boulder);
         gPlayerAvatar.preventStep = FALSE;
         UnlockPlayerFieldControls();
         DestroyTask(FindTaskIdByFunc(Task_PushBoulder));
