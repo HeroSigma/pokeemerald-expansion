@@ -49,7 +49,7 @@
 #define ENABLE_MYSTERY_GIFT 0
 #define ENABLE_BERRY_BLENDER 0
 #define ENABLE_CONTEST_HALL 0
-#define ENABLE_BATTLE_FRONTIER 0
+#define ENABLE_BATTLE_FRONTIER 1
 
 // Uncomment to fix some identified minor bugs
 #define BUGFIX
