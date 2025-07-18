@@ -45,10 +45,10 @@
 #endif
 
 // Feature toggles for memory reduction
-#define ENABLE_TRAINER_HILL 0
-#define ENABLE_MYSTERY_GIFT 0
-#define ENABLE_BERRY_BLENDER 0
-#define ENABLE_CONTEST_HALL 0
+#define ENABLE_TRAINER_HILL 1
+#define ENABLE_MYSTERY_GIFT 1
+#define ENABLE_BERRY_BLENDER 1
+#define ENABLE_CONTEST_HALL 1
 #define ENABLE_BATTLE_FRONTIER 1
 
 // Uncomment to fix some identified minor bugs
