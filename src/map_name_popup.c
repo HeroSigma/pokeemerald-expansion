@@ -16,6 +16,10 @@
 #include "constants/region_map_sections.h"
 #include "constants/weather.h"
 
+#ifndef MAPSEC_COUNT
+#define MAPSEC_COUNT (MAPSEC_NONE + 1)
+#endif
+
 // enums
 enum MapPopUp_Themes
 {
@@ -68,10 +72,9 @@ static const u16 sMapPopUp_PaletteTable[][16] =
 
 static const u16 sMapPopUp_Palette_Underwater[16] = INCBIN_U16("graphics/map_popup/underwater.gbapal");
 
-// -1 in the size excludes MAPSEC_NONE.
-// The MAPSEC values for Kanto (between MAPSEC_DYNAMIC and MAPSEC_AQUA_HIDEOUT) are also excluded,
-// and this is then handled by subtracting KANTO_MAPSEC_COUNT here and in LoadMapNamePopUpWindowBg.
-static const u8 sMapSectionToThemeId[MAPSEC_COUNT - KANTO_MAPSEC_COUNT - 1] =
+// Map section to popup theme mapping.  Includes all sections, including Kanto.
+// The last entry corresponds to MAPSEC_NONE.
+static const u8 sMapSectionToThemeId[MAPSEC_COUNT] =
 {
     [MAPSEC_LITTLEROOT_TOWN] = MAPPOPUP_THEME_WOOD,
     [MAPSEC_OLDALE_TOWN] = MAPPOPUP_THEME_WOOD,
@@ -325,6 +328,7 @@ static const u8 sMapSectionToThemeId[MAPSEC_COUNT - KANTO_MAPSEC_COUNT - 1] =
     [MAPSEC_DRAGONS_DEN] = MAPPOPUP_THEME_BRICK,
     [MAPSEC_TOHJO_FALLS] = MAPPOPUP_THEME_MARBLE,
     [MAPSEC_MT_SILVER] = MAPPOPUP_THEME_BRICK,
+    [MAPSEC_NONE] = MAPPOPUP_THEME_WOOD,
 };
 
 static const u8 gText_PyramidFloor1[] = _("PYRAMID FLOOR 1");
@@ -527,14 +531,7 @@ static void LoadMapNamePopUpWindowBg(void)
     u8 popupWindowId = GetMapNamePopUpWindowId();
     u16 regionMapSectionId = gMapHeader.regionMapSectionId;
 
-    // if (regionMapSectionId >= KANTO_MAPSEC_START)
-    // {
-    //     if (regionMapSectionId > KANTO_MAPSEC_END)
-    //         regionMapSectionId -= KANTO_MAPSEC_COUNT;
-    //     else
-    //         regionMapSectionId = 0; // Discard kanto region sections;
-    // }
-    popUpThemeId = sRegionMapSectionId_To_PopUpThemeIdMapping[regionMapSectionId];
+    popUpThemeId = sMapSectionToThemeId[regionMapSectionId];
 
     LoadBgTiles(GetWindowAttribute(popupWindowId, WINDOW_BG), sMapPopUp_OutlineTable[popUpThemeId], 0x400, 0x21D);
     CallWindowFunction(popupWindowId, DrawMapNamePopUpFrame);
