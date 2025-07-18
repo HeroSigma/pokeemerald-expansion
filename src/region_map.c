@@ -47,7 +47,7 @@
 
 #define FLYDESTICON_RED_OUTLINE 6
 
-u8 mapNumber;
+static u8 mapNumber;
 
 enum {
     TAG_CURSOR,
