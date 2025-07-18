@@ -551,7 +551,8 @@
 #define METATILE_Route8_UndergroundPass_Door  0x2CE
 
 // gTileset_Ruins
-#define METATILE_Ruins_Of_Alph_Door  0x323
+#define METATILE_Ruins_Of_Alph_Door         0x323
+#define METATILE_Ruins_Of_Alph_SlidingDoor  0x3B0
 
 // gTileset_Rustboro
 #define METATILE_Rustboro_Door_Gray  0x21F
