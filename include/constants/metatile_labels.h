@@ -360,6 +360,12 @@
 #define METATILE_LilycoveMuseum_Painting4_Right  0x263
 
 // gTileset_Lilycove
+#define METATILE_Lilycove_Wailmer0        0x11C0
+#define METATILE_Lilycove_Wailmer1        0x11C1
+#define METATILE_Lilycove_Wailmer2        0x11C2
+#define METATILE_Lilycove_Wailmer3        0x11C3
+#define METATILE_Lilycove_Wailmer0_Alt    0x11C4
+#define METATILE_Lilycove_Wailmer1_Alt    0x11C5
 #define METATILE_Lilycove_Door             0x3F6
 #define METATILE_Lilycove_Door_Wooden      0x3F7
 #define METATILE_Lilycove_Door_DeptStore   0x3F8
