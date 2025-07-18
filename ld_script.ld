@@ -1344,7 +1344,9 @@ SECTIONS {
     {
         src/*.o(.text);
         src/*.o(.rodata);
+        src/*.o(.data);
         data/*.o(.rodata);
+        data/*.o(.data);
     } > ROM = 0
 
     /* DWARF debug sections.
