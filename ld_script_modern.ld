@@ -86,6 +86,13 @@ SECTIONS {
         data/*.o(.rodata*);
     } > ROM =0
 
+    .data :
+    ALIGN(4)
+    {
+        src/*.o(.data*);
+        data/*.o(.data*);
+    } > ROM =0
+
     song_data :
     ALIGN(4)
     {
