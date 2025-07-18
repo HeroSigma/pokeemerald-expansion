@@ -238,8 +238,6 @@ syms: $(SYM)
 clean: tidy clean-tools clean-generated clean-assets
 	@$(MAKE) clean -C libagbsyscall
 
-clean-tools:
-	@$(foreach tooldir,$(TOOLDIRS),$(MAKE) clean -C $(tooldir);)
 
 mostlyclean: tidynonmodern tidymodern
 	find sound -iname '*.bin' -exec rm {} +
