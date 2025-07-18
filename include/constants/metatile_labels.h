@@ -359,6 +359,12 @@
 #define METATILE_LilycoveMuseum_Painting4_Left   0x262
 #define METATILE_LilycoveMuseum_Painting4_Right  0x263
 
+// gTileset_Lilycove
+#define METATILE_Lilycove_Door             0x3F6
+#define METATILE_Lilycove_Door_Wooden      0x3F7
+#define METATILE_Lilycove_Door_DeptStore   0x3F8
+#define METATILE_Lilycove_Door_SafariZone  0x3F9
+
 // gTileset_Mauville
 #define METATILE_Mauville_DeepSand_BottomMid  0x259
 #define METATILE_Mauville_DeepSand_Center     0x251
