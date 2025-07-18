@@ -835,11 +835,7 @@
     {
       "id": "MAPSEC_UNDERGROUND_PATH_2",
       "name": "UNDERGROUND PATH",
-      "name_clone": true
-    },
-    {
-      "id": "MAPSEC_UNDERGROUND_PATH_2",
-      "name": "UNDERGROUND PATH",
+      "name_clone": true,
       "x": 0,
       "y": 0,
       "width": 1,
@@ -1026,10 +1022,6 @@
       "name": "NAVEL ROCK"
     },
     {
-      "id": "MAPSEC_MT_EMBER",
-      "name": "MT. EMBER"
-    },
-    {
       "id": "MAPSEC_BERRY_FOREST",
       "name": "BERRY FOREST"
     },
@@ -1040,11 +1032,6 @@
     {
       "id": "MAPSEC_ROCKET_WAREHOUSE",
       "name": "ROCKET WAREHOUSE"
-    },
-    {
-      "id": "MAPSEC_TRAINER_TOWER_2",
-      "name": "TRAINER TOWER",
-      "name_clone": true
     },
     {
       "id": "MAPSEC_DOTTED_HOLE",
@@ -1067,44 +1054,13 @@
       "height": 1
     },
     {
-      "id": "MAPSEC_MONEAN_CHAMBER",
-      "name": "MONEAN CHAMBER"
-    },
-    {
-      "id": "MAPSEC_LIPTOO_CHAMBER",
-      "name": "LIPTOO CHAMBER"
-    },
-    {
-      "id": "MAPSEC_WEEPTH_CHAMBER",
-      "name": "WEEPTH CHAMBER"
-    },
-    {
       "id": "MAPSEC_TRAINER_TOWER_2",
       "name": "TRAINER TOWER",
+      "name_clone": true,
       "x": 0,
       "y": 0,
       "width": 1,
       "height": 1
-    },
-    {
-      "id": "MAPSEC_SCUFIB_CHAMBER",
-      "name": "SCUFIB CHAMBER"
-    },
-    {
-      "id": "MAPSEC_RIXY_CHAMBER",
-      "name": "RIXY CHAMBER"
-    },
-    {
-      "id": "MAPSEC_VIAPOIS_CHAMBER",
-      "name": "VIAPOIS CHAMBER"
-    },
-    {
-      "id": "MAPSEC_EMBER_SPA",
-      "name": "EMBER SPA"
-    },
-    {
-      "id": "MAPSEC_SPECIAL_AREA",
-      "name": "SPECIAL AREA"
     },
     {
       "id": "MAPSEC_THREE_ISLE_PATH",

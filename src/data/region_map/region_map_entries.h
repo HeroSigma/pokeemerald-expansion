@@ -125,7 +125,6 @@ static const u8 sMapName_MT__MOON[] = _("MT. MOON");
 static const u8 sMapName_S_S__ANNE[] = _("S.S. ANNE");
 static const u8 sMapName_UNDERGROUND_PATH[] = _("UNDERGROUND PATH");
 static const u8 sMapName_UNDERGROUND_PATH_Clone[] = _("UNDERGROUND PATH");
-static const u8 sMapName_DIGLETT_S_CAVE[] = _("DIGLETT'S CAVE");
 static const u8 sMapName_ROCKET_HIDEOUT[] = _("ROCKET HIDEOUT");
 static const u8 sMapName_SILPH_CO_[] = _("SILPH CO.");
 static const u8 sMapName_POK__MON_MANSION[] = _("POKéMON MANSION");
@@ -167,14 +166,16 @@ static const u8 sMapName_SEVII_ISLE_22[] = _("SEVII ISLE 22");
 static const u8 sMapName_SEVII_ISLE_23[] = _("SEVII ISLE 23");
 static const u8 sMapName_SEVII_ISLE_24[] = _("SEVII ISLE 24");
 static const u8 sMapName_NAVEL_ROCK[] = _("NAVEL ROCK");
-static const u8 sMapName_MT__EMBER[] = _("MT. EMBER");
 static const u8 sMapName_BERRY_FOREST[] = _("BERRY FOREST");
 static const u8 sMapName_ICEFALL_CAVE[] = _("ICEFALL CAVE");
 static const u8 sMapName_ROCKET_WAREHOUSE[] = _("ROCKET WAREHOUSE");
-static const u8 sMapName_TRAINER_TOWER_Clone[] = _("TRAINER TOWER");
 static const u8 sMapName_DOTTED_HOLE[] = _("DOTTED HOLE");
 static const u8 sMapName_LOST_CAVE[] = _("LOST CAVE");
 static const u8 sMapName_PATTERN_BUSH[] = _("PATTERN BUSH");
+static const u8 sMapName_MT__EMBER[] = _("MT. EMBER");
+static const u8 sMapName_TRAINER_TOWER_Clone[] = _("TRAINER TOWER");
+static const u8 sMapName_THREE_ISLE_PATH[] = _("THREE ISLE PATH");
+static const u8 sMapName_TANOBY_KEY[] = _("TANOBY KEY");
 static const u8 sMapName_MONEAN_CHAMBER[] = _("MONEAN CHAMBER");
 static const u8 sMapName_LIPTOO_CHAMBER[] = _("LIPTOO CHAMBER");
 static const u8 sMapName_WEEPTH_CHAMBER[] = _("WEEPTH CHAMBER");
@@ -184,9 +185,6 @@ static const u8 sMapName_RIXY_CHAMBER[] = _("RIXY CHAMBER");
 static const u8 sMapName_VIAPOIS_CHAMBER[] = _("VIAPOIS CHAMBER");
 static const u8 sMapName_EMBER_SPA[] = _("EMBER SPA");
 static const u8 sMapName_SPECIAL_AREA[] = _("SPECIAL AREA");
-static const u8 sMapName_THREE_ISLE_PATH[] = _("THREE ISLE PATH");
-static const u8 sMapName_TANOBY_KEY[] = _("TANOBY KEY");
-static const u8 sMapName_TANOBY_CHAMBERS[] = _("TANOBY CHAMBERS");
 static const u8 sMapName_AQUA_HIDEOUT[] = _("AQUA HIDEOUT");
 static const u8 sMapName_MAGMA_HIDEOUT[] = _("MAGMA HIDEOUT");
 static const u8 sMapName_MIRAGE_TOWER[] = _("MIRAGE TOWER");
@@ -1125,13 +1123,6 @@ const struct RegionMapLocation gRegionMapEntries[] = {
         .height = 1,
         .name = sMapName_UNDERGROUND_PATH_Clone,
     },
-    [MAPSEC_UNDERGROUND_PATH_2] = {
-        .x = 0,
-        .y = 0,
-        .width = 1,
-        .height = 1,
-        .name = sMapName_UNDERGROUND_PATH,
-    },
     [MAPSEC_KANTO_VICTORY_ROAD] = {
         .x = 0,
         .y = 0,
@@ -1432,6 +1423,62 @@ const struct RegionMapLocation gRegionMapEntries[] = {
         .width = 1,
         .height = 1,
         .name = sMapName_NAVEL_ROCK,
+    },
+    [MAPSEC_BERRY_FOREST] = {
+        .x = 0,
+        .y = 0,
+        .width = 1,
+        .height = 1,
+        .name = sMapName_BERRY_FOREST,
+    },
+    [MAPSEC_ICEFALL_CAVE] = {
+        .x = 0,
+        .y = 0,
+        .width = 1,
+        .height = 1,
+        .name = sMapName_ICEFALL_CAVE,
+    },
+    [MAPSEC_ROCKET_WAREHOUSE] = {
+        .x = 0,
+        .y = 0,
+        .width = 1,
+        .height = 1,
+        .name = sMapName_ROCKET_WAREHOUSE,
+    },
+    [MAPSEC_DOTTED_HOLE] = {
+        .x = 0,
+        .y = 0,
+        .width = 1,
+        .height = 1,
+        .name = sMapName_DOTTED_HOLE,
+    },
+    [MAPSEC_LOST_CAVE] = {
+        .x = 0,
+        .y = 0,
+        .width = 1,
+        .height = 1,
+        .name = sMapName_LOST_CAVE,
+    },
+    [MAPSEC_PATTERN_BUSH] = {
+        .x = 0,
+        .y = 0,
+        .width = 1,
+        .height = 1,
+        .name = sMapName_PATTERN_BUSH,
+    },
+    [MAPSEC_MT_EMBER] = {
+        .x = 0,
+        .y = 0,
+        .width = 1,
+        .height = 1,
+        .name = sMapName_MT__EMBER,
+    },
+    [MAPSEC_TRAINER_TOWER_2] = {
+        .x = 0,
+        .y = 0,
+        .width = 1,
+        .height = 1,
+        .name = sMapName_TRAINER_TOWER_Clone,
     },
     [MAPSEC_THREE_ISLE_PATH] = {
         .x = 0,
