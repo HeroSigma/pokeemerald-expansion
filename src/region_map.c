@@ -2009,8 +2009,8 @@ u8 *GetMapName(u8 *dest, u16 regionMapId, u16 padLength)
     return str;
 }
 
-// TODO: probably needs a better name
-u8 *GetMapNameGeneric(u8 *dest, u16 mapSecId)
+// Handles map name retrieval for areas that do not have fixed names
+u8 *GetGenericMapName(u8 *dest, u16 mapSecId)
 {
     switch (mapSecId)
     {
@@ -2028,7 +2028,7 @@ u8 *GetMapNameHandleAquaHideout(u8 *dest, u16 mapSecId)
     if (mapSecId == MAPSEC_AQUA_HIDEOUT_OLD)
         return StringCopy(dest, gText_Hideout);
     else
-        return GetMapNameGeneric(dest, mapSecId);
+        return GetGenericMapName(dest, mapSecId);
 }
 
 static void GetMapSecDimensions(u16 mapSecId, u16 *x, u16 *y, u16 *width, u16 *height)
