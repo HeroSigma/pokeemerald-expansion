@@ -114,7 +114,7 @@ bool8 IsRegionMapZoomed(void);
 void TrySetPlayerIconBlink(void);
 void BlendRegionMap(u16 color, u32 coeff);
 void SetRegionMapDataForZoom(void);
-void SetMapGraphics(u8 mapNum);
+void SetRegionMapNumber(u8 mapNum);
 
 extern const struct RegionMapLocation gRegionMapEntries[];
 extern const struct RegionMapLocation gRegionMapEntries_Johto[];

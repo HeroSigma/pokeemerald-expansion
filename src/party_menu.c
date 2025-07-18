@@ -6452,7 +6452,7 @@ static void SetRegionSelectionActions()
 static void CursorCb_Kanto(u8 taskId)
 {
     PlaySE(SE_SELECT);
-    SetMapGraphics(0);
+    SetRegionMapNumber(0);
     gPartyMenu.exitCallback = CB2_OpenFlyMap;
     Task_ClosePartyMenu(taskId);
 }
@@ -6460,7 +6460,7 @@ static void CursorCb_Kanto(u8 taskId)
 static void CursorCb_Johto(u8 taskId)
 {
     PlaySE(SE_SELECT);
-    SetMapGraphics(1);
+    SetRegionMapNumber(1);
     gPartyMenu.exitCallback = CB2_OpenFlyMap;
     Task_ClosePartyMenu(taskId);
 }
@@ -6468,7 +6468,7 @@ static void CursorCb_Johto(u8 taskId)
 static void CursorCb_Hoenn(u8 taskId)
 {
     PlaySE(SE_SELECT);
-    SetMapGraphics(2);
+    SetRegionMapNumber(2);
     gPartyMenu.exitCallback = CB2_OpenFlyMap;
     Task_ClosePartyMenu(taskId);
 }
@@ -6476,7 +6476,7 @@ static void CursorCb_Hoenn(u8 taskId)
 static void CursorCb_Sevii(u8 taskId)
 {
     PlaySE(SE_SELECT);
-    SetMapGraphics(3);
+    SetRegionMapNumber(3);
     gPartyMenu.exitCallback = CB2_OpenFlyMap;
     Task_ClosePartyMenu(taskId);
 }

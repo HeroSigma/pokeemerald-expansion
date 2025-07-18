@@ -660,7 +660,7 @@ void ShowPokedexAreaScreen(u16 species, u8 *screenSwitchState, u8 mapNum)
 
 static void Task_ShowPokedexAreaScreen(u8 taskId)
 {
-    SetMapGraphics(mapNumber);
+    SetRegionMapNumber(mapNumber);
     
     switch (gTasks[taskId].tState)
     {

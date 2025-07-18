@@ -972,28 +972,28 @@ static void CB2_FieldShowRegionMap(void)
 
 void FieldShowRegionMap(void)
 {
-    SetMapGraphics(2);
+    SetRegionMapNumber(2);
     SetFieldMapNumber(2);
     SetMainCallback2(CB2_FieldShowRegionMap);
 }
 
 void FieldShowRegionMapKanto(void)
 {
-    SetMapGraphics(0);
+    SetRegionMapNumber(0);
     SetFieldMapNumber(0);
     SetMainCallback2(CB2_FieldShowRegionMap);
 }
 
 void FieldShowRegionMapJohto(void)
 {
-    SetMapGraphics(1);
+    SetRegionMapNumber(1);
     SetFieldMapNumber(1);
     SetMainCallback2(CB2_FieldShowRegionMap);
 }
 
 void FieldShowRegionMapSevii(void)
 {
-    SetMapGraphics(3);
+    SetRegionMapNumber(3);
     SetFieldMapNumber(3);
     SetMainCallback2(CB2_FieldShowRegionMap);
 }
