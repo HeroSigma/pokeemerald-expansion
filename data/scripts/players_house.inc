@@ -345,9 +345,17 @@ PlayersHouse_1F_EventScript_TryGiveAmuletCoin::
 	end
 
 PlayersHouse_1F_EventScript_MomHealsParty::
-	msgbox PlayersHouse_1F_Text_YouShouldRestABit, MSGBOX_DEFAULT
-	goto PlayersHouse_1F_EventScript_HealParty
-	end
+        msgbox PlayersHouse_1F_Text_YouShouldRestABit, MSGBOX_DEFAULT
+        goto PlayersHouse_1F_EventScript_HealParty
+        end
+
+PlayersHouse_1F_EventScript_GiveFameChecker::
+        giveitem ITEM_FAME_CHECKER
+        goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
+        msgbox PlayersHouse_1F_Text_GotFameChecker, MSGBOX_DEFAULT
+        setflag FLAG_RECEIVED_FAME_CHECKER
+        release
+        end
 
 PlayersHouse_1F_EventScript_SeeYouHoney::
 	msgbox PlayersHouse_1F_Text_SeeYouHoney, MSGBOX_DEFAULT
@@ -673,3 +681,7 @@ PlayersHouse_1F_Movement_PlayerApproachTVForLatiFemale:
 EventScript_RunningShoesManual::
 	msgbox PlayersHouse_1F_Text_RunningShoesManual, MSGBOX_SIGN
 	end
+PlayersHouse_1F_Text_GotFameChecker:
+        .string "MOM: This device lets you read what\n"
+        .string "others say about famous TRAINERS.\p"
+        .string "It might help you become one, too!$"
